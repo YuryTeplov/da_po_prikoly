@@ -7,8 +7,6 @@ setmetatable(Bullet,{__index = Base})
 function Bullet:new(body, width, height, fx, fy)
   self = Base.new(self, body, width, height)
 
-  self:setUserData('bullet')
-
   local private = {}
   private.fx = fx 
   private.fy = fy

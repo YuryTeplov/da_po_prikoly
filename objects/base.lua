@@ -11,15 +11,13 @@ function Base:new(body, width, height, texture)
   private.shape = love.physics.newRectangleShape(private.width, private.height)
   private.fixture = love.physics.newFixture(private.body, private.shape)
 
+  private.fixture:setUserData(self)
+
 
   local public = {}
 
   function public:disableRotation()
     private.body:setFixedRotation(true)
-  end
-
-  function public:setUserData(data) 
-    private.fixture:setUserData(data)
   end
 
   function public:draw()
@@ -81,6 +79,11 @@ function Base:new(body, width, height, texture)
   setmetatable(public,self)
   self.__index = self 
   return public
+end
+
+function Base:touch(object_name) 
+  print(object_name)
+
 end
 
 return Base

@@ -9,8 +9,6 @@ function Actor:new(body, width, height, speed)
 
   self = Base.new(self, body, width, height)
 
-  self:setUserData('actor')
-
 
   local private = {}
 

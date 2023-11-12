@@ -61,7 +61,8 @@ function World:new()
     local entityA = a:getUserData()
     local entityB = b:getUserData()
 
-    print('contacted'..entityA..entityB)
+    entityA:touch('1')
+    entityB:touch('2')
 
   end
 
